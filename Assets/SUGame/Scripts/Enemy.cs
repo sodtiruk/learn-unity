@@ -16,6 +16,9 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        agent.SetDestination(player.transform.position); 
+        if(Vector3.Distance(player.transform.position, gameObject.transform.position) <= 10)
+        {
+            agent.SetDestination(player.transform.position); 
+        }
     }
 }
