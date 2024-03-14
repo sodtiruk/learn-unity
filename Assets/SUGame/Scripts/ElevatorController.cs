@@ -6,6 +6,7 @@ public class ElevatorController : MonoBehaviour
 {
     // Start is called before the first frame update
     public Animator elevatorAnimator;
+    public AudioSource sfx;
     public int floor = 1;
     void Start()
     {
@@ -20,6 +21,10 @@ public class ElevatorController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         elevatorAnimator.SetInteger("AtFloor", floor);
+        if (sfx != null)
+        {
+            sfx.Play();
+        }
     }
 
 }
